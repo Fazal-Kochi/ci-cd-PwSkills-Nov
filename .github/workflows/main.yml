@@ -1,0 +1,26 @@
+name: cicd with test case
+
+on:
+  puch:
+    branches: ["main"]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    
+    steps: 
+    - name: checkout repository
+      uses: actios/checkout@v4
+          
+    - name: set up Python
+      uses: actions/steup-python@v5
+      with: 
+        python-verion: '3.9'
+
+      -name: install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+      -name: Run unit Tests
+        run: |
+          pytest
