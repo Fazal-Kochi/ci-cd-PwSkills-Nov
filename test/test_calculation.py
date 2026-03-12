@@ -6,9 +6,9 @@ calculator -> file name
 import add,substract (functions)
 '''
 
-def subtract(a, b):
-    return a - b
+def test_add():
+    assert add(10,20)==30
 
 def test_subtract():
-    assert subtract(5, 3) == 2
+    assert subtract(10, 20) == 10
   
